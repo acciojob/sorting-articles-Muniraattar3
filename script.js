@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const bands = [
     'The Plot in You',
     'The Devil Wears Prada',
@@ -21,12 +20,13 @@ function stripArticles(str) {
 }
 
 // Sort the bands while ignoring articles
-const sortedBands = bands.sort((a, b) => {
+const sortedBands = bands.slice().sort((a, b) => {
     return stripArticles(a).localeCompare(stripArticles(b));
 });
 
 // Populate the sorted list into the HTML
 const bandList = document.getElementById('band');
+
 sortedBands.forEach(band => {
     const li = document.createElement('li');
     li.textContent = band;
